@@ -2,19 +2,19 @@
 
 ## Transform a Bayer image to RGB
 
-A Bayer filter mosaic is a color filter array (CFA) for arranging RGB color filters on a square grid of photosensors. Its particular arrangement of color filters is used in most single-chip digital image sensors used in digital cameras, camcorders, and scanners to create a color imageCreate a bayer filter to achive greater optimization.
+A Bayer filter mosaic is a color filter array (CFA) for arranging RGB color filters on a square grid of photosensors. Its particular arrangement of color filters is used in most single-chip digital image sensors used in digital cameras, camcorders, and scanners to create a color imageCreate a Bayer filter to achieve greater optimization.
 
-Using the following architecture, we were able to transform the computation from software to hardware, in the calcilation of the averages and thus achieving significat benefits in terms of performance:
+Using the following architecture, we were able to transform the computation from software to hardware, in the calculation of the averages and thus achieving significant benefits in terms of performance:
 
 ![](/images/RTL.png)
 
 ---
 
-The whole concept is that the hardware module takes as an input a single pixel, and when we start a new image. We need the start of an image and its size to determine the position of the pixel according to the image and consequently the color that the position represent in the Bayer form, and then calculate the averages and output the correct RGB values. 
+The whole concept is that the hardware module takes as an input a single pixel, and when we start a new image. We need the start of an image and its size to determine the position of the pixel according to the image and consequently the color that the position represents in the Bayer form, and then calculate the averages and output the correct RGB values.
 
 ![](/images/Image.png)
 
-The averages are calculated accoriding to:
+The averages are calculated according to:
 
 ![](/images/average.png)
 
@@ -25,7 +25,7 @@ The averages are calculated accoriding to:
 
 ---
 
-The hardware module is communicating with and axi4-stream protocol with logic: 
+The hardware module is communicating with and axi4-stream protocol with logic:
 
 ![](/images/axi.png)
 
